@@ -1,0 +1,162 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "wfm@mail.ru",
+      "password": "12345678",
+      "name": "Администратор"
+    }
+  ],
+  "bill": {
+    "value": 100200,
+    "currency": "EUR"
+  },
+  "categories": [
+    {
+      "capacity": "15000",
+      "name": "Дом",
+      "id": 1
+    },
+    {
+      "name": "Еда",
+      "capacity": "10000",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Машина",
+      "capacity": 7000
+    },
+    {
+      "id": 4,
+      "name": "Пожертвования",
+      "capacity": 7000
+    },
+    {
+      "id": 5,
+      "name": "Дары",
+      "capacity": 7000
+    },
+    {
+      "name": "Рыбалка",
+      "capacity": 12345,
+      "id": 6
+    },
+    {
+      "name": "Охота",
+      "capacity": 1234,
+      "id": 7
+    },
+    {
+      "name": "toasty`",
+      "capacity": 141414,
+      "id": 8
+    }
+  ],
+  "events": [
+    {
+      "type": "outcome",
+      "amount": 2470,
+      "category": 2,
+      "date": "17.06.2019 14:00:58",
+      "id": 4,
+      "description": "Закупка на неделю"
+    },
+    {
+      "type": "outcome",
+      "amount": 4000,
+      "category": 3,
+      "date": "10.06.2019 14:01:58",
+      "id": 5,
+      "description": "Заправка + проход ТО"
+    },
+    {
+      "category": 4,
+      "amount": 100,
+      "description": "Hello",
+      "type": "outcome",
+      "date": "20.06.2019 14:55:18",
+      "id": 6
+    },
+    {
+      "category": 3,
+      "amount": 100,
+      "description": "Hello",
+      "type": "outcome",
+      "date": "20.06.2019 14:55:18",
+      "id": 7
+    },
+    {
+      "category": 4,
+      "amount": 100,
+      "description": "Hello",
+      "type": "outcome",
+      "date": "20.06.2019 14:55:18",
+      "id": 8
+    },
+    {
+      "category": 2,
+      "amount": 100,
+      "description": "Hello",
+      "type": "outcome",
+      "date": "20.06.2019 14:55:18",
+      "id": 9
+    },
+    {
+      "category": 1,
+      "amount": 100,
+      "description": "Hello",
+      "type": "outcome",
+      "date": "20.06.2019 14:55:18",
+      "id": 10
+    },
+    {
+      "category": 3,
+      "amount": 100,
+      "description": "Hello",
+      "type": "outcome",
+      "date": "20.06.2019 14:55:18",
+      "id": 11
+    },
+    {
+      "type": "outcome",
+      "amount": 5000,
+      "category": 7,
+      "date": "17.06.2019 14:00:58",
+      "id": 12,
+      "description": "Test description"
+    },
+    {
+      "category": 1,
+      "type": "income",
+      "amount": 12,
+      "description": "11",
+      "date": "2021-02-10T12:01:58.142Z",
+      "id": 14
+    },
+    {
+      "category": 1,
+      "type": "income",
+      "amount": 12345678,
+      "description": "Save me and take me home",
+      "date": "2021-02-11T13:38:45.948Z",
+      "id": 15
+    },
+    {
+      "category": 2,
+      "type": "outcome",
+      "amount": 1214,
+      "description": "1241414",
+      "date": "2021-02-11T13:44:29.883Z",
+      "id": 16
+    },
+    {
+      "category": 4,
+      "type": "income",
+      "amount": 12414,
+      "description": "141414",
+      "date": "2021-02-11T13:45:02.949Z",
+      "id": 17
+    }
+  ]
+}
