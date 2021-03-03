@@ -1,0 +1,44 @@
+<div class="container auth">
+    <div class="form_block">
+        <div class="form_header">Домашняя бухгалтерия</div>
+        <form name="regForm" novalidate>
+            <div class="subHeader">
+                Зарегиструйтесь для работы
+            </div>
+            <md-input-container>
+                <label>Почта</label>
+                <input ng-model="regCtrl.regForm.emailUser"  type="email" ng-required="true" >
+                <div ng-messages ="regCtrl.regForm.email.$error" role ='alert'>
+                    <div ng-message="required">Поля Почта не может быть пустым</div>
+                    <div ng-message="email">Некорректный ввод</div>
+                </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Пароль</label>
+                <input ng-required="true" type="{{regCtrl.hidePass ? 'password' : 'text'}}" ng-model="regCtrl.regForm.userpassword">
+                <md-button class="showButton" ng-click="regCtrl.hidePass = !regCtrl.hidePass" disableRipple="true">
+                    <span class="material-icons">{{regCtrl.hidePass ? 'visibility_off' : 'visibility'}}</span>
+                </md-button>
+                <div class="errorBlock" ng-messages="regForm.password.$error.required">
+                    <div ng-message="required">Поля Пароль не может быть пустым</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container>
+                <label>Имя</label>
+                <input ng-model="regCtrl.regForm.name"  type="text" ng-required="true" >
+                <div ng-messages ="regCtrl.regForm.name.$error" role ='alert'>
+                    <div ng-message="required">Поля Имя не может быть пустым</div>
+
+                </div>
+            </md-input-container>
+            <md-checkbox ng-model="regCtrl.regForm.agree" aria-label="Checkbox 1">
+                Согласен с правилами
+            </md-checkbox>
+            <md-button ng-click="regCtrl.submitForm()" >Войти</md-button>
+        </form>
+        <div class="line">
+           Есть аккаунт? <a href="#/login">Войти</a>
+        </div>
+    </div>
+</div>

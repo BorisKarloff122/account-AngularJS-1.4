@@ -2,14 +2,17 @@ var app = angular.module('appModule',[
     'auth',
     'main',
     'ngRoute',
-    'ngMaterial'
+    'ngMessages',
+    'ngMaterial',
+    'ngAnimate'
 ]);
 
 angular.module('appModule').config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
-            .when('/', {template:'<list-block></list-block>',})
-            .when('/account', {template:'<account-list></account-list>',});
+            .when('/', {redirectTo:'/login'})
+            .when('/account', {template:'<account-list></account-list>',})
+            .otherwise('/404', {template: '<not-found></not-found>'});
 }]);
 
 angular.module('appModule').directive('appHeader', function () {
@@ -30,10 +33,26 @@ angular.module('appModule').directive('appFooter', function () {
     }
 });
 
+
+angular.module('appModule').directive('notFound', function () {
+    return{
+        templateUrl:'shared/components/not-found.component.html',
+        controller:notController,
+        controllerAs:'notCtrl',
+        bindToController:true
+    }
+});
+
+
+
 function footerController() {
     
 }
 
 function headerController() {
+    
+}
+
+function notController() {
     
 }

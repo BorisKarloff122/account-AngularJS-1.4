@@ -1,21 +1,33 @@
+<div class="container auth">
 <div class="form_block">
     <div class="form_header">Домашняя бухгалтерия</div>
-    <form>
+    <form name="loginForm" novalidate>
         <div class="subHeader">
             Войдите для работы
         </div>
         <md-input-container>
             <label>Почта</label>
-            <input type="text" placeholder="Почта">
+            <input ng-model="loginCtrl.loginForm.emailUser"  type="email" ng-required="true" >
+            <div ng-messages ="loginCtrl.loginForm.email.$error" role ='alert'>
+                <div ng-message="required">Поля Почта не может быть пустым</div>
+                <div ng-message="email">Некорректный ввод</div>
+            </div>
+
         </md-input-container>
         <md-input-container>
             <label>Пароль</label>
-            <input type="password" placeholder="Пароль">
-            <md-button></md-button>
+            <input ng-required="true" type="{{loginCtrl.hidePass ? 'password' : 'text'}}" ng-model="loginCtrl.loginForm.userpassword">
+            <md-button class="showButton" ng-click="loginCtrl.hidePass = !loginCtrl.hidePass" disableRipple="true">
+                 <span class="material-icons">{{loginCtrl.hidePass ? 'visibility_off' : 'visibility'}}</span>
+            </md-button>
+            <div class="errorBlock" ng-messages="loginForm.password.$error.required">
+                <div ng-message="required">Поля Пароль не может быть пустым</div>
+            </div>
         </md-input-container>
-        <md-button>Войти</md-button>
+        <md-button ng-click="loginCtrl.submitForm()" >Войти</md-button>
     </form>
     <div class="line">
         Нет аккаунта? <a href="#/reg">Зарегистрироваться</a>
     </div>
+</div>
 </div>

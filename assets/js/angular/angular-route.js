@@ -228,7 +228,7 @@ function $RouteProvider() {
 
   /**
    * @ngdoc method
-   * @name $routeProvider#otherwise
+   * @name $routeProvider.otherwise#otherwise
    *
    * @description
    * Sets route definition that will be used on route change when no other route definition
@@ -238,7 +238,7 @@ function $RouteProvider() {
    * If called with a string, the value maps to `redirectTo`.
    * @returns {Object} self
    */
-  this.otherwise = function(params) {
+  this.otherwise = function (params, p) {
     if (typeof params === 'string') {
       params = {redirectTo: params};
     }
