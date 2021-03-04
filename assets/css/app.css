@@ -57,6 +57,29 @@ md-input-container{
 }
 
 
+
+.error-Block{
+    transition-duration:0.4s;
+    -webkit-transition:0.4s;
+    opacity: 0;
+    height:1px;
+    overflow: hidden;
+    margin:10px auto;
+    background-color: #ff413a;
+    color:#fff;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.active{
+    height:35px;
+    transition-duration:0.4s;
+    -webkit-transition:0.4s;
+    opacity: 1;
+    overflow: visible;
+}
+
 .form_header{
     margin-bottom:10px;
     font-size:16px;
@@ -68,4 +91,9 @@ md-input-container{
     display:Flex;
     align-items: center;
     justify-content: center;
+}
+
+
+.form_block .line{
+    margin-top:20px;
 }

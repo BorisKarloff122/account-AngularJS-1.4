@@ -5,18 +5,20 @@
         <div class="subHeader">
             Войдите для работы
         </div>
+        <div ng-if="loginCtrl.loginError !== ''"
+             ng-class="loginCtrl.loginError !== ''? 'active':''"
+             class = "error-Block">{{loginCtrl.loginError}}</div>
         <md-input-container>
             <label>Почта</label>
-            <input ng-model="loginCtrl.loginForm.emailUser"  type="email" ng-required="true" >
+            <input ng-model = "loginCtrl.loginForm.email" type="email" ng-required = "true" >
             <div ng-messages ="loginCtrl.loginForm.email.$error" role ='alert'>
                 <div ng-message="required">Поля Почта не может быть пустым</div>
                 <div ng-message="email">Некорректный ввод</div>
             </div>
-
         </md-input-container>
         <md-input-container>
             <label>Пароль</label>
-            <input ng-required="true" type="{{loginCtrl.hidePass ? 'password' : 'text'}}" ng-model="loginCtrl.loginForm.userpassword">
+            <input ng-required="true" type="{{loginCtrl.hidePass ? 'password' : 'text'}}" ng-model="loginCtrl.loginForm.password">
             <md-button class="showButton" ng-click="loginCtrl.hidePass = !loginCtrl.hidePass" disableRipple="true">
                  <span class="material-icons">{{loginCtrl.hidePass ? 'visibility_off' : 'visibility'}}</span>
             </md-button>
