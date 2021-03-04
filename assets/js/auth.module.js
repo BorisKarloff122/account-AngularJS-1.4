@@ -36,19 +36,15 @@ function loginController($scope, $http, $location) {
         email: '',
         password: ''
     };
-
     loginCtrl.submitForm = submitForm;
-
     function submitForm() {
         loginCtrl.isSubmitted = true;
-
         if ($scope.loginForm.$valid){
             $http.get(`http://localhost:3000/users?email=${loginCtrl.loginForm.email}`).then(loginSuccess,);
         }
     }
 
     function loginSuccess(response) {
-        console.log('dis');
         if (response.data.length === 0){
             loginCtrl.loginError = 'Такого пользователя не существует';
             setTimeout(function () {loginCtrl.loginError = ''}, 600);
@@ -66,6 +62,7 @@ function loginController($scope, $http, $location) {
         if(response.data.length > 0 && loginCtrl.passwordCheck){
             $http.post('http://localhost:3000/activeUser', response.data);
             $location.url('/account');
+            return
         }
     }
 }
