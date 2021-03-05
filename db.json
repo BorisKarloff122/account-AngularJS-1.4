@@ -1,13 +1,16 @@
 {
   "activeUser": [
-    [
-      {
-        "email": "test@test",
-        "password": "123",
-        "name": "tony",
-        "id": 3
-      }
-    ]
+    {
+      "email": "test@test",
+      "password": "123",
+      "name": "tony",
+      "id": 3
+    },
+    {
+      "email": "test@test",
+      "password": "123",
+      "id": 4
+    }
   ],
   "users": [
     {
@@ -27,6 +30,12 @@
       "password": "123",
       "name": "tony",
       "id": 3
+    },
+    {
+      "email": "test@test123",
+      "password": "123",
+      "name": "1241241",
+      "id": 4
     }
   ],
   "bill": {

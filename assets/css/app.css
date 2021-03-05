@@ -56,6 +56,10 @@ md-input-container{
     justify-content: center;
 }
 
+.subHeader{
+    margin-bottom:20px;
+}
+
 
 
 .error-Block{

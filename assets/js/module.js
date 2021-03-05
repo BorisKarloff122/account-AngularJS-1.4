@@ -1,6 +1,6 @@
 var app = angular.module('appModule',[
     'auth',
-    'main',
+    'account',
     'ngRoute',
     'ngMessages',
     'ngMaterial',
