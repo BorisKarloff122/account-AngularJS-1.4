@@ -1,3 +1,26 @@
 <app-header></app-header>
-<div ng-view></div>
+<div class="drawerContainer">
+    <div class="drawer" ng-class="vm.drawer? 'active':'' " ng-if="vm.user">
+        <div class="name">
+            {{vm.user.name}}
+        </div>
+        <div class="email">
+            {{vm.user.email}}
+        </div>
+        <div class="imageBlock">
+            <img alt="" src="{{'assets/img/img' | imgFilter}}">
+        </div>
+        <div class="menuBlock">
+            <div class="menu_header">Страницы</div>
+            <div class="navBar">
+                <a ng-click="vm.setState('bill')">Страница счета</a>
+                <a ng-click="vm.setState('records')">Страница записей</a>
+                <a ng-click="vm.setState('history')">Страница истории</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div ng-include="vm.tempState"></div>
+    </div>
+</div>
 <app-footer></app-footer>
