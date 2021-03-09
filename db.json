@@ -1,13 +1,11 @@
 {
   "activeUser": [
-    [
-      {
-        "email": "test@test",
-        "password": "123",
-        "name": "tony",
-        "id": 3
-      }
-    ]
+    {
+      "email": "test@test",
+      "password": "123",
+      "name": "tony",
+      "id": 3
+    }
   ],
   "users": [
     {

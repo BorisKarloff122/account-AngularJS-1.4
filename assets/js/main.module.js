@@ -42,8 +42,10 @@ account.directive('historyPage', function () {
 
 function accountController($http, $scope) {
    var self = this;
-   self.setState = setState;
    self.tempState = 'pages/main/bill/bill-page.component.html';
+   self.drawer = true;
+   self.menuState = 'bill';
+   self.setState = setState;
 
 
    $scope.$on('drawerOpen',function (event, data) {
@@ -60,21 +62,57 @@ function accountController($http, $scope) {
    function setState(state) {
        if(state === 'bill') {
             self.tempState = 'pages/main/bill/bill-page.component.html';
+            self.menuState = 'bill';
        }
        else if(state === 'history'){
            self.tempState = 'pages/main/history/history-page.component.html';
+           self.menuState = 'history';
        }
        else if(state === 'records'){
            self.tempState = 'pages/main/records/records-page.component.html';
+           self.menuState = 'records';
        }
    }
 
    init();
 }
 
-function billController() {
-   var self = this;
-}
+
+account.controller('billController', function billController($http) {
+    var self = this;
+    self.valutes = ['EUR', 'USD', 'UAH'];
+
+    $http.get('http://data.fixer.io/api/latest?access_key=156f43c852d2eb2cdca7a4ba965e720a').then(function (responseMain) {
+        self.currencyRateUSD = responseMain.data['USD'];
+        self.currencyRateUAH = responseMain.data['UAH'];
+        $http.get('http://localhost:3000/bill').then(function (response) {
+            setDataSource(responseMain, response);
+        })
+    });
+
+
+    function setDataSource (response, bill){
+
+        self.billDataSource = Array(3).fill(0).map(function (x, index) {
+         return  {
+                name: self.valutes[index],
+                value:response.data.rates[self.valutes[index]],
+                date: response.data['date']
+            }
+        });
+
+        self.billProps = ['name','value', 'date'];
+        self.recordedProps = ['name','value'];
+        self.recordedSource= Array(3).fill(0).map(function (x, y) {
+            return{
+                name:self.valutes[y],
+                value: bill.data.value * response.data.rates[self.valutes[y]]
+            }
+        })
+    }
+
+});
+
 
 function historyController() {
     var self = this;
@@ -83,10 +121,10 @@ function historyController() {
 
 account.controller('drawerController', function ($scope, $location, $http) {
     var self = this;
+    self.isDrawed = true;
     self.drawerActive = drawerActive;
     self.openMenu = openMenu;
     self.logOut = logOut;
-    self.isDrawed = false;
 
     function drawerActive() {
         if(self.isDrawed){
@@ -108,8 +146,10 @@ account.controller('drawerController', function ($scope, $location, $http) {
     }
     
     function logOut() {
-        $http.delete('http://localhost:3000/activeUser/3').then(function () {
-            $location.url('login');
+        $http.get('http://localhost:3000/activeUser').then(function (response) {
+            $http.delete('http://localhost:3000/activeUser/' + response.data[0].id).then(function () {
+                $location.url('login');
+            });
         });
     }
 });

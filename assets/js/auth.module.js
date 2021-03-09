@@ -36,6 +36,7 @@ function loginController($scope, $http, $location) {
         email: '',
         password: ''
     };
+
     loginCtrl.submitForm = submitForm;
     function submitForm() {
         loginCtrl.isSubmitted = true;
@@ -60,9 +61,8 @@ function loginController($scope, $http, $location) {
             }
         }
         if(response.data.length > 0 && loginCtrl.passwordCheck){
-            $http.post('http://localhost:3000/activeUser', response.data);
+            $http.post('http://localhost:3000/activeUser', response.data[0]);
             $location.url('/account');
-            return
         }
     }
 }
