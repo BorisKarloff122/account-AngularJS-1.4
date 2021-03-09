@@ -1,0 +1,20 @@
+<div class="block_header">
+    Страница счета
+</div>
+<div ng-controller="billController as vm" class="bill_container container">
+
+
+    <div class="tableBlock">
+        <div class="tableHeader">Счет</div>
+    <custom-table
+            type = "imaged"
+            source="vm.recordedSource"
+            props="vm.recordedProps"></custom-table>
+</div>
+    <div class="tableBlock">
+        <div class="tableHeader">Курс</div>
+        <custom-table
+                source = "vm.billDataSource"
+                props = 'vm.billProps'></custom-table>
+    </div>
+</div>

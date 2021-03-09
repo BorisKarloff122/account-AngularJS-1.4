@@ -1,0 +1,31 @@
+<md-toolbar class="md-menu-toolbar" ng-controller="drawerController as vm">
+    <div class="container">
+        <div class="logo">
+                <span class="material-icons" ng-click = 'vm.drawerActive()'>
+                    menu
+                </span>
+            Домашня бухгалтерия</div>
+        <div class="actRow">
+            <div class="toolbarBlock">
+                <ul>
+                    <li><span class="material-icons">settings</span></li>
+                    <li><span class='material-icons'>help_outline</span></li>
+                    <li>
+                        <md-menu md-position-mode="right bottom">
+                            <span class='material-icons' ng-click="vm.openMenu($mdMenu, $event)">person</span>
+                            <md-menu-content >
+                                <md-menu-item class="icon">
+                                    <a class="headerItem"><span class="material-icons gray">note_add</span>Записи</a>
+                                </md-menu-item>
+                                <md-menu-item class="icon">
+                                    <a class="headerItem" ng-click="vm.logOut()"><span class="gray material-icons">login</span>Выйти</a>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</md-toolbar>

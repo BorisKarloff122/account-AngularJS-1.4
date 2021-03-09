@@ -6,6 +6,10 @@ body{
 }
 
 
+a{
+    ouline:none;
+}
+
 .container{
     max-width:1200px;
     margin:0 auto;
@@ -100,4 +104,227 @@ md-input-container{
 
 .form_block .line{
     margin-top:20px;
+}
+
+.imageBlock{
+    width:120px;
+    height:120px;
+    overflow: hidden;
+    margin:25px auto;
+    border-radius: 360px;
+}
+
+.imageBlock img{
+    height: 100%;
+    width: auto;
+}
+
+.md-toolbar.md-default-theme.md-menu-toolbar, md-toolbar.md-menu-toolbar{
+    background-color:#3f51b5;
+    color: #ffffff;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo .material-icons{
+    margin-right:10px;
+}
+
+.md-toolbar.md-default-theme.md-menu-toolbar .container,
+md-toolbar.md-menu-toolbar .container {
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:0 10px;
+}
+
+.toolbarBlock{
+    display:flex;
+    align-items: center;
+}
+
+.toolbarBlock ul li{
+    margin:0 10px;
+    list-style: none;
+}
+
+.toolbarBlock ul{
+    padding:0;
+    margin:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawerContainer{
+    overflow: hidden;
+    width:100%;
+    height:calc(100vh - 56px);
+    box-shadow:1px 1px 1px 1px rgba(0,0,0,0.4);
+    display:flex;
+}
+
+.drawerContainer .content{
+    width:100%;
+}
+
+.drawer{
+    background-color:#f8f8ff;
+    height:100%;
+    width: 30%;
+    margin-left:-30%;
+    border-left:1px solid #333;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    transition-duration:0.4s;
+    -webkit-transition:0.4s;
+    justify-content: flex-start;
+}
+
+md-menu-content{
+    min-width:120px;
+}
+
+.drawerContainer .active{
+    margin-left:0;
+}
+
+.drawer .name{
+    font-weight:bold;
+    font-size:20px;
+    margin-top:50px;
+    text-transform: capitalize;
+    margin-bottom:20px;
+}
+
+.gray{
+    opacity: 0.7;
+
+}
+
+.icon{
+    cursor: pointer;
+}
+
+.headerItem{
+    padding:0 8px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.menuBlock{
+    width:100%;
+}
+.activeLink{
+    font-weight:bold;
+    color:#fff;
+    background-color:#3f51b5;
+}
+.menu_title{
+    padding:10px;
+    border-bottom:1px solid rgba(198, 206, 211, 0.84);
+}
+
+
+.info_block {
+    text-align: center;
+    width: 100%;
+    margin: 40px auto;
+}
+
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.navBar{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+a{
+    outline: none;
+}
+
+.navBar a{
+    padding:10px 22px;
+    width:100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+
+}
+
+custom-table{
+    width:100%;
+}
+
+.tableContainer{
+    background-color:#fff;
+    border-radius: 4px;
+    padding-bottom:25px;
+    padding-top:10px;
+}
+
+
+.tableRow{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    border-bottom:1px solid #c6ced3;
+    flex-wrap: nowrap;
+}
+
+
+.table_cell{
+    padding:10px 25px;
+}
+
+
+.bill_container{
+    display:Flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bill_container .tableBlock{
+    width:49%;
+    background-color:#fff;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+.bill_container .tableHeader{
+    padding:15px;
+    margin-bottom:10px;
+}
+
+.show-block{
+    padding:0 15px;
+    box-sizing: border-box;
+}
+
+.block_header {
+    display: flex;
+    padding: 0 0 30px 0;
+    border-bottom: 1px solid #e6dfdf;
+    margin: 30px auto;
+    justify-content: space-between;
+    font-size:20px;
+    font-weight:400;
 }

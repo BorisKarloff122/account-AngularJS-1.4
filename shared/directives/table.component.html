@@ -1,0 +1,10 @@
+<div class="tableContainer">
+    <div class="table_row table_header_row" ng-if="vm.headers" >
+        <div class="table_header table_cell" ng-repeat="header in vm.headers">{{header}}</div>
+    </div>
+    <div class="tableRow" ng-repeat="entry in vm.source">
+        <div class="table_cell" ng-repeat="prop in vm.props">{{entry[prop]}}</div>
+    </div>
+</div>
+
+
