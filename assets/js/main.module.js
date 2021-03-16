@@ -3,15 +3,6 @@ var account = angular.module('account',[
     'ngMaterial',
     'ngAnimate']);
 
-account.config(['$routeProvider',
-    function ($routeProvider) {
-        $routeProvider
-            .when('/account', {redirectTo:'/bill'})
-            .when('/bill', {template:'<bill-page></bill-page>',})
-            .when('/history', {template:'<history-page></history-page>',})
-            .when('/records', {template:'<records-page></records-page>',});
-    }]);
-
 
 account.directive('accountPage', function () {
    return {
@@ -47,7 +38,6 @@ function accountController($http, $scope) {
    self.menuState = 'bill';
    self.setState = setState;
 
-
    $scope.$on('drawerOpen',function (event, data) {
       self.drawer = data
    });
@@ -77,11 +67,9 @@ function accountController($http, $scope) {
    init();
 }
 
-
 account.controller('billController', function billController($http) {
     var self = this;
     self.valutes = ['EUR', 'USD', 'UAH'];
-
     $http.get('http://data.fixer.io/api/latest?access_key=156f43c852d2eb2cdca7a4ba965e720a').then(function (responseMain) {
         self.currencyRateUSD = responseMain.data['USD'];
         self.currencyRateUAH = responseMain.data['UAH'];
@@ -90,9 +78,7 @@ account.controller('billController', function billController($http) {
         })
     });
 
-
     function setDataSource (response, bill){
-
         self.billDataSource = Array(3).fill(0).map(function (x, index) {
          return  {
                 name: self.valutes[index],

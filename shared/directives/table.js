@@ -18,8 +18,11 @@ table.directive('customTable', function () {
 
 });
 
-
 function customTableController($scope) {
     var self = this;
+
+    if (self.type){
+
+    }
 
 }
