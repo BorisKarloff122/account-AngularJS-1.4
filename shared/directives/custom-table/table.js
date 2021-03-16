@@ -1,9 +1,8 @@
 var table = angular.module('tableModule',[]);
 
 table.directive('customTable', function () {
-
     return{
-        templateUrl:'shared/directives/table.component.html',
+        templateUrl:'shared/directives/custom-table/table.component.html',
         controller:customTableController,
         controllerAs:"vm",
         bindToController:true,
@@ -19,7 +18,6 @@ table.directive('customTable', function () {
 });
 
 
-function customTableController($scope) {
+function customTableController() {
     var self = this;
-
 }

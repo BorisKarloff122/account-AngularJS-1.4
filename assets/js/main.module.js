@@ -3,15 +3,6 @@ var account = angular.module('account',[
     'ngMaterial',
     'ngAnimate']);
 
-account.config(['$routeProvider',
-    function ($routeProvider) {
-        $routeProvider
-            .when('/account', {redirectTo:'/bill'})
-            .when('/bill', {template:'<bill-page></bill-page>',})
-            .when('/history', {template:'<history-page></history-page>',})
-            .when('/records', {template:'<records-page></records-page>',});
-    }]);
-
 
 account.directive('accountPage', function () {
    return {
@@ -46,8 +37,7 @@ function accountController($http, $scope) {
    self.drawer = true;
    self.menuState = 'bill';
    self.setState = setState;
-
-
+   
    $scope.$on('drawerOpen',function (event, data) {
       self.drawer = data
    });
@@ -90,9 +80,7 @@ account.controller('billController', function billController($http) {
         })
     });
 
-
     function setDataSource (response, bill){
-
         self.billDataSource = Array(3).fill(0).map(function (x, index) {
          return  {
                 name: self.valutes[index],
@@ -100,24 +88,44 @@ account.controller('billController', function billController($http) {
                 date: response.data['date']
             }
         });
-
         self.billProps = ['name','value', 'date'];
         self.recordedProps = ['name','value'];
-        self.recordedSource= Array(3).fill(0).map(function (x, y) {
+        self.recordedSource = Array(3).fill(0).map(function (x, y) {
             return{
                 name:self.valutes[y],
                 value: bill.data.value * response.data.rates[self.valutes[y]]
             }
         })
     }
-
 });
 
-
-function historyController() {
+account.controller('historyController', function ($scope, $http) {
     var self = this;
-}
+    self.categoryNames = [];
+    self.outcomes = [];
+    self.graphData = [];
+    $http.get('http://localhost:3000/categories').then(function (categories) {
+        $http.get('http://localhost:3000/events').then(function (events) {
+            categories.data.forEach(function (i, item) {
+                self.categoryNames.push(i.name);
+            });
+            events.data.forEach(function (i, item) {
+                self.outcomes[i.category] = typeof self.outcomes[i.category] !== 'undefined'
+                    ? self.outcomes[i.category] + i.amount
+                    : i.amount;
+            });
+            calcGraphData();
+        });
+    });
 
+    function calcGraphData() {
+        self.outcomes.forEach(function (i, item) {
+            if(i){
+                self.graphData.push({name:self.categoryNames[item],value:i});
+            }
+        })
+    }
+});
 
 account.controller('drawerController', function ($scope, $location, $http) {
     var self = this;
