@@ -4,6 +4,9 @@
 <div class="container history_container" ng-controller="historyController as vm">
     <pie-chart data="vm.graphData"></pie-chart>
     <custom-table
+    pagination="true"
+    per-page="20"
+    limit = 'vm.limit'
     activator="histTableButtonTriggered"
     headers="vm.tableHeaders"
     props="vm.tableProps"

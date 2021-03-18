@@ -11,5 +11,9 @@
             <md-button ng-if="prop === 'action'"  class="md-raised" ng-click = 'vm.actionCall(entry[prop].data)'>{{entry[prop].buttonText}}</md-button></div>
     </div>
 </div>
-
+<paginator ng-if="vm.pagination"
+           limit = 'vm.limit'
+           per-page="vm.perPage"
+           border-buttons="true"
+></paginator>
 

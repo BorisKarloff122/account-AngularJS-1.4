@@ -334,6 +334,50 @@ custom-table{
 }
 
 
+.income{
+    box-shadow: 9px 9px 2px rgb(63 81 181 / 58%);
+}
+
+.outcome{
+    box-shadow:9px 9px 2px rgba(244, 67, 54, 0.51);
+}
+
+.details_block .title{
+    text-transform: capitalize;
+}
+
+.details_block{
+    max-width:500px;
+    margin:50px auto;
+    padding:20px;
+    border:1px solid #eee;
+    border-radius: 8px;
+}
+
+.outcome .title{
+    color: #f44336;
+}
+
+.income .title{
+    color: #3f51b5;
+}
+.details_block .title{
+    font-weight: bold;
+    text-align: center;
+    font-size:20px;
+}
+
+.paginatorContainer{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tableContainer{
+    margin-top:40px;
+}
+
 @media(max-width:1300px){
     .table_cell{
         font-size:0.8em;

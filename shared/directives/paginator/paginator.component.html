@@ -1,0 +1,12 @@
+<div class="paginatorContainer container">
+    <div class="totalBlock" ng-if="vm.perPage">
+        <div class="total">Всего: {{vm.limit}}</div>
+        <div class="from">{{vm.beginFrom}} из {{vm.endTo}}</div>
+    </div>
+    <button class="pagButton borderButtons toStart" ng-click = 'vm.toStart()'><span class="material-icons">first_page</span></button>
+    <div class="pagButtons">
+        <button class="pagButton prev"><span ng-click = "vm.paginate('prev')" class="material-icons">navigate_before</span></button>
+        <button class="pagButton next"><span ng-click = "vm.paginate('next')" class="material-icons">navigate_next</span></button>
+    </div>
+    <button class="pagButton borderButtons toEnd" ng-click = 'vm.toEnd()'><span class="material-icons">last_page</span></button>
+</div>

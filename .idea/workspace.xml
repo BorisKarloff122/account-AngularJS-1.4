@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54ae90a1-f04d-4746-8987-72ea951f9fcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/directives/graph/graph.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/directives/graph/graph.js" afterDir="false" />
+    <list default="true" id="54ae90a1-f04d-4746-8987-72ea951f9fcc" name="Default Changelist" comment="- added fixes to pie chart, added adjustments to custom table layout">
+      <change afterPath="$PROJECT_DIR$/pages/main/history/details.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/directives/paginator/paginator.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/module.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main/bill/bill-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/bill/bill-page.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/main/history/history-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/history/history-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main/records/records-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/records/records-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/directives/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/shared/directives/custom-table/table.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/directives/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/shared/directives/custom-table/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/directives/custom-table/table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/shared/directives/custom-table/table.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/directives/custom-table/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/shared/directives/custom-table/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/services/dataGetter.js" beforeDir="false" afterPath="$PROJECT_DIR$/shared/services/dataGetter.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,17 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/main/history/history-page.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+            <state relative-caret-position="90">
+              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -49,17 +36,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/main.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+            <state relative-caret-position="-1140">
+              <caret line="153" selection-start-line="153" selection-end-line="153" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/module.js">
+        <entry file="file://$PROJECT_DIR$/shared/directives/paginator/paginator.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="53" lean-forward="true" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -67,35 +54,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4440">
-              <caret line="296" column="24" lean-forward="true" selection-start-line="296" selection-start-column="24" selection-end-line="296" selection-end-column="24" />
+            <state relative-caret-position="675">
+              <caret line="361" column="19" lean-forward="true" selection-start-line="361" selection-start-column="19" selection-end-line="361" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shared/directives/custom-table/table.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/shared/directives/graph/graph.js">
+        <entry file="file://$PROJECT_DIR$/shared/directives/custom-table/table.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="270">
+              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/main/bill/bill-page.component.html">
+        <entry file="file://$PROJECT_DIR$/shared/services/dataGetter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shared/directives/graph/graph.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
+            <state relative-caret-position="180">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -103,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="375">
+              <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -114,9 +101,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -124,22 +111,17 @@
     <findStrings>
       <find>md-input-container</find>
       <find>login</find>
-      <find>.drawerContainer</find>
-      <find>&lt;mat-icon class=&quot;icon&quot; &gt;</find>
-      <find>content</find>
-      <find>respons</find>
-      <find>.drawer</find>
-      <find>.toolbarBlock ul li</find>
+      <find>subHeader\</find>
+      <find>console.l</find>
+      <find>drawer</find>
+      <find>.table_cell</find>
     </findStrings>
-    <replaceStrings>
-      <replace>&lt;span class='material-icons'&gt;</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="bill" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -147,38 +129,35 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pages/auth/components/reg.html" />
+        <option value="$PROJECT_DIR$/shared/components/footer.component.html" />
         <option value="$PROJECT_DIR$/pages/auth/components/login.html" />
+        <option value="$PROJECT_DIR$/shared/components/header.component.html" />
         <option value="$PROJECT_DIR$/shared/components/main.component.html" />
         <option value="$PROJECT_DIR$/pages/auth/components/login/login.component.css" />
         <option value="$PROJECT_DIR$/pages/auth/components/auth.component.html" />
         <option value="$PROJECT_DIR$/shared/components/not-found.component.html" />
-        <option value="$PROJECT_DIR$/shared/services/dataGetter.js" />
-        <option value="$PROJECT_DIR$/pages/auth/components/reg.component.html" />
-        <option value="$PROJECT_DIR$/pages/auth/components/login.component.html" />
-        <option value="$PROJECT_DIR$/shared/components/header.component.html" />
-        <option value="$PROJECT_DIR$/shared/components/footer.component.html" />
-        <option value="$PROJECT_DIR$/assets/js/auth.module.js" />
-        <option value="$PROJECT_DIR$/shared/directives/table.js" />
-        <option value="$PROJECT_DIR$/shared/directives/table.component.html" />
-        <option value="$PROJECT_DIR$/pages/main/account-page/account-page.component.html" />
-        <option value="$PROJECT_DIR$/assets/js/charts.js" />
-        <option value="$PROJECT_DIR$/pages/main/records/records-page.component.html" />
-        <option value="$PROJECT_DIR$/shared/directives/custom-table/table.js" />
-        <option value="$PROJECT_DIR$/assets/css/app.css" />
-        <option value="$PROJECT_DIR$/db.json" />
-        <option value="$PROJECT_DIR$/pages/main/history/history-page.component.html" />
-        <option value="$PROJECT_DIR$/pages/main/bill/bill-page.component.html" />
-        <option value="$PROJECT_DIR$/assets/js/module.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/shared/directives/graph/graph.component.html" />
-        <option value="$PROJECT_DIR$/assets/js/main.module.js" />
+        <option value="$PROJECT_DIR$/pages/main/account-page/account-page.component.html" />
+        <option value="$PROJECT_DIR$/assets/js/module.js" />
+        <option value="$PROJECT_DIR$/pages/auth/components/reg.component.html" />
+        <option value="$PROJECT_DIR$/assets/js/auth.module.js" />
+        <option value="$PROJECT_DIR$/pages/auth/components/login.component.html" />
         <option value="$PROJECT_DIR$/shared/directives/graph/graph.js" />
+        <option value="$PROJECT_DIR$/db.json" />
+        <option value="$PROJECT_DIR$/pages/main/history/details.component.html" />
+        <option value="$PROJECT_DIR$/shared/directives/paginator/paginator.html" />
+        <option value="$PROJECT_DIR$/shared/directives/custom-table/table.component.html" />
+        <option value="$PROJECT_DIR$/shared/services/dataGetter.js" />
+        <option value="$PROJECT_DIR$/assets/css/app.css" />
+        <option value="$PROJECT_DIR$/pages/main/history/history-page.component.html" />
+        <option value="$PROJECT_DIR$/assets/js/main.module.js" />
+        <option value="$PROJECT_DIR$/shared/directives/paginator/paginator.component.html" />
+        <option value="$PROJECT_DIR$/shared/directives/custom-table/table.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="39" />
-    <option name="y" value="125" />
+    <option name="y" value="-1" />
     <option name="width" value="959" />
     <option name="height" value="1039" />
   </component>
@@ -187,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,6 +199,12 @@
               <item name="accountingAngularJS-1.4.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="accountingAngularJS-1.4.0" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="accountingAngularJS-1.4.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="accountingAngularJS-1.4.0" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -247,14 +231,13 @@
             <path>
               <item name="accountingAngularJS-1.4.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="accountingAngularJS-1.4.0" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="records" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="accountingAngularJS-1.4.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="accountingAngularJS-1.4.0" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="accountingAngularJS-1.4.0" type="b2602c69:ProjectViewProjectNode" />
@@ -274,7 +257,7 @@
               <item name="accountingAngularJS-1.4.0" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
               <item name="directives" type="462c0819:PsiDirectoryNode" />
-              <item name="graph" type="462c0819:PsiDirectoryNode" />
+              <item name="paginator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="accountingAngularJS-1.4.0" type="b2602c69:ProjectViewProjectNode" />
@@ -286,6 +269,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,11 +284,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/shared/directives" />
-      <recent name="$PROJECT_DIR$/shared/directives/custom-table" />
       <recent name="$PROJECT_DIR$/pages/auth/components" />
       <recent name="$PROJECT_DIR$/pages/auth/components/reg" />
       <recent name="$PROJECT_DIR$/pages/auth/components/login" />
+      <recent name="$PROJECT_DIR$/assets/js/angular" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -340,15 +323,23 @@
       <workItem from="1614789167418" duration="112000" />
       <workItem from="1614844838836" duration="44000" />
       <workItem from="1614859247272" duration="8981000" />
-      <workItem from="1614870279242" duration="4819000" />
-      <workItem from="1615273645744" duration="9000" />
-      <workItem from="1615288008467" duration="17494000" />
-      <workItem from="1615913870110" duration="94000" />
+      <workItem from="1614870279242" duration="2073000" />
+      <workItem from="1616051594154" duration="46000" />
+      <workItem from="1616066694489" duration="613000" />
+      <workItem from="1616067422167" duration="15036000" />
     </task>
+    <task id="LOCAL-00001" summary="- added fixes to pie chart, added adjustments to custom table layout">
+      <created>1616067612750</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616067612750</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81858000" />
+    <option name="totallyTimeSpent" value="66836000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,8 +354,8 @@
     <frame x="0" y="-1" width="1920" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49158248" visible="true" weight="0.31982943" />
-      <window_info id="Structure" order="1" sideWeight="0.5084175" side_tool="true" weight="0.3160981" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48922056" visible="true" weight="0.25799572" />
+      <window_info id="Structure" order="1" sideWeight="0.51077944" side_tool="true" visible="true" weight="0.25799572" />
       <window_info id="Alibaba Cloud Explorer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -374,17 +365,17 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Alibaba Cloud View" order="7" />
+      <window_info anchor="bottom" id="Alibaba Cloud View" order="7" sideWeight="0.49946696" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989339" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Codeup" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.34" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.4989339" visible="true" weight="0.34" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" visible="true" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Alibaba Log Console" order="3" />
-      <window_info anchor="right" id="Alibaba Function Compute" order="4" weight="0.32995737" />
+      <window_info anchor="right" id="Alibaba Function Compute" order="3" />
+      <window_info anchor="right" id="Alibaba Log Console" order="4" />
       <window_info anchor="right" id="Alibaba ROS Templates" order="5" weight="0.32995737" />
     </layout>
     <layout-to-restore>
@@ -456,6 +447,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- added fixes to pie chart, added adjustments to custom table layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="- added fixes to pie chart, added adjustments to custom table layout" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/js/angular/docs/js/docs.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -498,166 +493,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shared/components/main.component.html" />
-    <entry file="file://$PROJECT_DIR$/pages/auth/components/login/login.component.css" />
-    <entry file="file://$PROJECT_DIR$/pages/auth/components/auth.component.html" />
-    <entry file="file://$PROJECT_DIR$/pages/auth/components/reg.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="66" selection-start-line="18" selection-start-column="65" selection-end-line="19" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/components/not-found.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/auth/components/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/services/dataGetter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shared/components/footer.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file:///usr/local/lib/node_modules/json-server/node_modules/lodash-id/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/angular/angular-scenario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="38943" column="42" selection-start-line="38943" selection-start-column="42" selection-end-line="38943" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/components/main.component.html" />
+    <entry file="file://$PROJECT_DIR$/pages/auth/components/login/login.component.css" />
     <entry file="file://$PROJECT_DIR$/shared/components/header.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/auth/components/auth.component.html" />
+    <entry file="file://$PROJECT_DIR$/shared/components/not-found.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/auth.module.js">
+    <entry file="file://$PROJECT_DIR$/pages/auth/components/reg.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/main/account-page/account-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/directives/custom-table/table.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/directives/custom-table/table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/main/records/records-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/charts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="16171" column="5" selection-start-line="16171" selection-start-column="5" selection-end-line="16171" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/main/history/history-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4440">
-          <caret line="296" column="24" lean-forward="true" selection-start-line="296" selection-start-column="24" selection-end-line="296" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/main/bill/bill-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/directives/graph/graph.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/main.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+        <state relative-caret-position="285">
+          <caret line="22" column="87" lean-forward="true" selection-start-line="22" selection-start-column="87" selection-end-line="22" selection-end-column="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="53" lean-forward="true" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+        <state relative-caret-position="16">
+          <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/auth.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/auth/components/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/main/records/records-page.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/directives/graph/graph.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/main/bill/bill-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shared/directives/graph/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="150">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="146" column="24" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="11131" column="13" selection-start-line="11131" selection-start-column="13" selection-end-line="11131" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/main/history/details.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/main/account-page/account-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/main/history/history-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/main.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1140">
+          <caret line="153" selection-start-line="153" selection-end-line="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="361" column="19" lean-forward="true" selection-start-line="361" selection-start-column="19" selection-end-line="361" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/directives/custom-table/table.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/directives/paginator/paginator.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/services/dataGetter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/directives/custom-table/table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
         </state>
       </provider>
     </entry>

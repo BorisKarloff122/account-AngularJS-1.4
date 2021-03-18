@@ -31,6 +31,15 @@ account.directive('historyPage', function () {
     }
 });
 
+account.directive('detailsPage', function () {
+    return{
+        templateUrl:'pages/main/history/details.component.html',
+        controller:detailsController,
+        controllerAs:'vm',
+        bindToController:true
+    }
+});
+
 function accountController($http, $scope) {
    var self = this;
    self.tempState = 'pages/main/bill/bill-page.component.html';
@@ -62,22 +71,55 @@ function accountController($http, $scope) {
            self.tempState = 'pages/main/records/records-page.component.html';
            self.menuState = 'records';
        }
+       else if(state === 'details'){
+           self.tempState = 'pages/main/history/details.component.html';
+           self.menuState = 'history';
+       }
    }
+
+   $scope.$on('backToHistory', function () {
+       self.tempState = 'pages/main/history/history-page.component.html';
+       self.menuState = 'history';
+   });
+
+   $scope.$on('detailsChange', function (event, data) {
+       setState('details');
+   });
 
    init();
 }
 
 
-account.controller('billController', function billController($http,$scope) {
+account.controller('detailsController', function ($scope, $http, details) {
+    var self = this;
+    self.exist = false;
+    self.categoryNames = details.categoryNames;
+    self.goBack = goBack;
+    $http.get('http://localhost:3000/events/' + details.id).then(function (response) {
+           self.elId = details.id;
+           self.exist = true;
+           self.event = response.data;
+    },
+    function () {
+        self.exist = false;
+    });
+
+    function goBack() {
+        console.log('goBack');
+        $scope.$emit('backToHistory');
+    }
+});
+
+
+account.controller('billController', function billController($http) {
     var self = this;
     self.valutes = ['EUR', 'USD', 'UAH'];
-
     $http.get('http://data.fixer.io/api/latest?access_key=156f43c852d2eb2cdca7a4ba965e720a').then(function (responseMain) {
         self.currencyRateUSD = responseMain.data['USD'];
         self.currencyRateUAH = responseMain.data['UAH'];
         $http.get('http://localhost:3000/bill').then(function (response) {
             setDataSource(responseMain, response);
-        })
+        });
     });
 
     function setDataSource (response, bill){
@@ -97,13 +139,10 @@ account.controller('billController', function billController($http,$scope) {
             }
         })
     }
-
-    $scope.$on('historyTable', function () {
-        alert('stuff');
-    });
 });
 
-account.controller('historyController', function ($scope, $http, $filter) {
+
+account.controller('historyController', function ($scope, $http, $filter, details) {
     var self = this;
     self.categoryNames = [];
     self.outcomes = [];
@@ -111,6 +150,8 @@ account.controller('historyController', function ($scope, $http, $filter) {
     self.tableHeaders = [];
     self.tableSource = [];
     self.tableSource = [];
+    self.limit = 0;
+
     $http.get('http://localhost:3000/categories').then(function (categories) {
         $http.get('http://localhost:3000/events').then(function (events) {
             categories.data.forEach(function (i, item) {
@@ -130,11 +171,16 @@ account.controller('historyController', function ($scope, $http, $filter) {
                         data: i.id,
                         buttonText:'Подробнее'
                     }
-                    })
+                 })
             });
+            details.categoryNames = self.categoryNames;
+            self.limit = events.data.length;
+
             calcGraphData();
             calcTableSource();
         });
+        
+
     });
 
     function calcGraphData() {
@@ -168,12 +214,18 @@ account.controller('historyController', function ($scope, $http, $filter) {
         };
         $scope.$broadcast('graphDataChange', self.graphData);
     }
+    
     function calcTableSource() {
         self.tableHeaders = ['#', 'Сумма', 'Дата', 'Категория', 'Тип', 'Действие'];
         self.tableProps = ['index','amount','date','category','type','action'];
     }
 
+    $scope.$on('histTableButtonTriggered', function (event, data) {
+        $scope.$emit('detailsChange', data);
+        details.id = data;
+    });
 });
+
 
 account.controller('drawerController', function ($scope, $location, $http) {
     var self = this;
@@ -206,25 +258,3 @@ account.controller('drawerController', function ($scope, $location, $http) {
     }
 });
 
-account.filter('typeFilter',function () {
-   return function (text) {
-       if(text === 'outcome'){
-           return 'Расход'
-       }
-       else{
-           return 'Доход'
-       }
-   };
-});
-
-
-account.filter('imgFilter',function () {
-    return function (text) {
-        var random = rand();
-        return text + random + '.jpg';
-    };
-
-    function rand() {
-        return Math.floor(Math.random() * (Math.floor(4) - Math.ceil(1) + 1)) + Math.ceil(1);
-    }
-});
