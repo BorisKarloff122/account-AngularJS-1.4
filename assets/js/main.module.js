@@ -68,7 +68,7 @@ function accountController($http, $scope) {
 }
 
 
-account.controller('billController', function billController($http) {
+account.controller('billController', function billController($http,$scope) {
     var self = this;
     self.valutes = ['EUR', 'USD', 'UAH'];
 
@@ -97,13 +97,20 @@ account.controller('billController', function billController($http) {
             }
         })
     }
+
+    $scope.$on('historyTable', function () {
+        alert('stuff');
+    });
 });
 
-account.controller('historyController', function ($scope, $http) {
+account.controller('historyController', function ($scope, $http, $filter) {
     var self = this;
     self.categoryNames = [];
     self.outcomes = [];
-    self.graphData = [];
+    self.graphData = {};
+    self.tableHeaders = [];
+    self.tableSource = [];
+    self.tableSource = [];
     $http.get('http://localhost:3000/categories').then(function (categories) {
         $http.get('http://localhost:3000/events').then(function (events) {
             categories.data.forEach(function (i, item) {
@@ -113,18 +120,59 @@ account.controller('historyController', function ($scope, $http) {
                 self.outcomes[i.category] = typeof self.outcomes[i.category] !== 'undefined'
                     ? self.outcomes[i.category] + i.amount
                     : i.amount;
+
+                self.tableSource.push({
+                    type:$filter('typeFilter')(i.type),
+                    category: self.categoryNames[i.category],
+                    amount:i.amount,
+                    date:i.date,
+                    action:{
+                        data: i.id,
+                        buttonText:'Подробнее'
+                    }
+                    })
             });
             calcGraphData();
+            calcTableSource();
         });
     });
 
     function calcGraphData() {
+        let labels = [];
+        let values = [];
         self.outcomes.forEach(function (i, item) {
             if(i){
-                self.graphData.push({name:self.categoryNames[item],value:i});
+                labels.push(self.categoryNames[item]);
+                values.push(i);
             }
-        })
+        });
+        self.graphData = {
+            labels:labels,
+                datasets: [{
+                label: 'OutcomesGraph',
+                data: values,
+                    backgroundColor:[
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)']
+            }],
+        };
+        $scope.$broadcast('graphDataChange', self.graphData);
     }
+    function calcTableSource() {
+        self.tableHeaders = ['#', 'Сумма', 'Дата', 'Категория', 'Тип', 'Действие'];
+        self.tableProps = ['index','amount','date','category','type','action'];
+    }
+
 });
 
 account.controller('drawerController', function ($scope, $location, $http) {
@@ -148,10 +196,6 @@ account.controller('drawerController', function ($scope, $location, $http) {
     function openMenu($mdMenu, ev) {
         $mdMenu.open(ev);
     }
-
-    function closeMenu($mdMenu, ev) {
-        $mdMenu.close(ev);
-    }
     
     function logOut() {
         $http.get('http://localhost:3000/activeUser').then(function (response) {
@@ -160,6 +204,17 @@ account.controller('drawerController', function ($scope, $location, $http) {
             });
         });
     }
+});
+
+account.filter('typeFilter',function () {
+   return function (text) {
+       if(text === 'outcome'){
+           return 'Расход'
+       }
+       else{
+           return 'Доход'
+       }
+   };
 });
 
 

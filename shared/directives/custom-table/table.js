@@ -11,13 +11,20 @@ table.directive('customTable', function () {
             source: '=',
             headers: '=',
             props: '=',
-            type:'@'
+            type:'@',
+            activator:'@'
         }
     }
 
 });
 
 
-function customTableController() {
+function customTableController($scope) {
     var self = this;
+    self.actionCall = actionCall;
+
+    function actionCall(data){
+        var activatorLine = self.activator;
+        $scope.$emit(activatorLine, data);
+    }
 }

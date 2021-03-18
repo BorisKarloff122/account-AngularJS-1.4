@@ -33,13 +33,13 @@
   },
   "categories": [
     {
-      "capacity": "15000",
+      "capacity": 1111,
       "name": "Дом",
       "id": 1
     },
     {
       "name": "Еда",
-      "capacity": "10000",
+      "capacity": 1111,
       "id": 2
     },
     {
@@ -157,7 +157,7 @@
     {
       "category": 1,
       "type": "income",
-      "amount": 12345678,
+      "amount": 1234,
       "description": "Save me and take me home",
       "date": "2021-02-11T13:38:45.948Z",
       "id": 15

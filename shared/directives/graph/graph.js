@@ -13,43 +13,15 @@ graph.directive('pieChart', function () {
 });
 
 
-function graphController($scope, $timeout) {
+function graphController($scope) {
     var self = this;
-    var arr = self.data;
-    var labels = [];
-    var values = [];
-    setTimeout(()=>{
-        init();
-    },1500);
-        
-    
-    function setGraph() {
+    $scope.$on('graphDataChange',function (event,data) {
         var ctx = document.getElementById('myChart').getContext('2d');
-
         var myPieChart = new Chart(ctx, {
             type: 'pie',
-            data: {
-                labels:labels,
-                datasets: [{
-                    label: '',
-                    data: values,
-                }],
-            },
-            options: {
-                responsive: true
-            }
+            data: data
         });
-    }
-
-    function init() {
-        arr.forEach(function (i, item) {
-            labels.push[i];
-            values.push[i];
-        });
-        console.log(labels);
-        setGraph();
-    }
-
+    });
 
 }
 

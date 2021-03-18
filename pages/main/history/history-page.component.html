@@ -3,5 +3,10 @@
 </div>
 <div class="container history_container" ng-controller="historyController as vm">
     <pie-chart data="vm.graphData"></pie-chart>
-
+    <custom-table
+    activator="histTableButtonTriggered"
+    headers="vm.tableHeaders"
+    props="vm.tableProps"
+    source="vm.tableSource"
+    ></custom-table>
 </div>
