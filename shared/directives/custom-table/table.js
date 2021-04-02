@@ -89,7 +89,8 @@ function paginatorController($scope, $timeout) {
             self.beginFrom = self.beginFrom - self.perPage;
             self.endTo = self.beginFrom + self.perPage - 1;
         }
-        $scope.$emit(self.paginatorAction, {page: self.pageNumber, perPage: self.onPage});
+
+        $scope.$emit(self.paginatorAction, {page: self.pageNumber, perPage: self.perPage});
     }
 
     function toStart() {
@@ -108,7 +109,7 @@ function paginatorController($scope, $timeout) {
         self.endTo = self.limit;
         var lastPageElements = self.limit - (self.perPage * (self.endPage - 1)) - 1;
         self.beginFrom = self.limit - lastPageElements;
-        $scope.$emit(self.paginatorAction, {page: self.pageNumber, perPage: self.onPage});
+        $scope.$emit(self.paginatorAction, {page: self.pageNumber, perPage: self.perPage});
     }
 
     $timeout(function () {init();},100);
