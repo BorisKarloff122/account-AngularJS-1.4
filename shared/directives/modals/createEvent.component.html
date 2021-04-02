@@ -1,0 +1,32 @@
+<div class="modal-content" ng-controller="createEventController as vm">
+    <div class="header">Добавить событие</div>
+    <div class="contentBlock">
+        <form name="vm.form">
+        <md-input-container>
+            <label>Категория</label>
+                <md-select ng-model="vm.form.category" aria-label="Категория">
+                    <md-option data-ng-repeat="entry in vm.info" ng-value="{{$index}}">{{!entry.name ? entry : entry.name}}</md-option>
+                </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Описание</label>
+            <input type="text" placeholder="Описание"  ng-model="vm.form.description">
+        </md-input-container>
+        <md-input-container>
+            <label>Тип</label>
+            <md-select aria-label="Тип" ng-model='vm.form.type' >
+                <md-option ng-value="'outcome'">Расход</md-option>
+                <md-option ng-value="'income'">Доход</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Стоимость</label>
+            <input placeholder="Стоимость" type="number" ng-model="vm.form.amount">
+        </md-input-container>
+        <div class="actions">
+            <md-button ng-click = 'vm.submit()' class="blue md-raised">Сохранить</md-button>
+            <md-button ng-click = 'vm.closeModal()' class="md-raised">Закрыть</md-button>
+        </div>
+        </form>
+    </div>
+</div>

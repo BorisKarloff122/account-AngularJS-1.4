@@ -5,9 +5,6 @@
             <div class="subHeader">
                 Зарегиструйтесь для работы
             </div>
-            <div ng-if="regCtrl.errorText!== ''"
-                 ng-class="loginCtrl.errorText !== ''? 'active':''"
-                 class = "error-Block">{{regCtrl.errorText}}</div>
             <md-input-container>
                 <label>Почта</label>
                 <input ng-model="regCtrl.regForm.email"  type="email" ng-required="true" >

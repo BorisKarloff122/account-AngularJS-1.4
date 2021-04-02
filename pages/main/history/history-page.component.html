@@ -1,1 +1,23 @@
-history!
+<div class="block_header">
+    Страница истории
+</div>
+<div class="history_container" ng-controller="historyController as vm">
+    <pie-chart data="vm.graphData"></pie-chart>
+    <div class="button_row">
+        <md-button class="md-raised" ng-click="vm.createNewEvent()">
+            Создать событие
+        </md-button>
+    </div>
+    <custom-table
+    pagination="true"
+    per-page="vm.perPage"
+    paginator-action="vm.paginatorAction"
+    limit = 'vm.limit'
+    activator="histTableButtonTriggered"
+    headers="vm.tableHeaders"
+    props="vm.tableProps"
+    source="vm.tableSource"
+    on-page="[5,10,50]"
+
+    ></custom-table>
+</div>

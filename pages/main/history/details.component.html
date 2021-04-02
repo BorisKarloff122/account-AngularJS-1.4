@@ -1,0 +1,21 @@
+<div class="details_container" ng-controller="detailsController as vm">
+    <div class="exists">
+        <div class="block_header">
+            <div class="back" style="cursor:pointer">
+                <span class="material-icons" ng-click = 'vm.goBack()'>keyboard_backspace</span>
+            </div>
+            Страница записи #{{vm.elId}}
+        </div>
+        <div class="inner_container container" >
+            <div class="details_block" ng-class="vm.event.type === 'outcome'?'outcome':'income'" >
+                <div class="title">{{vm.event.type | typeFilter}}</div>
+                    <ul>
+                        <li>Сумма: <strong>{{vm.event.amount}} EUR</strong></li>
+                        <li>Категория: <strong>{{vm.categoryNames[vm.event.category]}}</strong></li>
+                        <li>Комментарий: <strong>{{vm.event.description}}</strong></li>
+                    </ul>
+                <div class="date">{{vm.event.date}}</div>
+            </div>
+        </div>
+    </div>
+</div>

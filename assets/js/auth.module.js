@@ -32,13 +32,13 @@ function loginController($scope, $http, $location) {
     loginCtrl.isSubmitted = false;
     loginCtrl.passwordCheck = false;
     loginCtrl.loginError = '';
-    loginCtrl.submitForm = submitForm;
     loginCtrl.loginForm = {
         email: '',
         password: ''
     };
 
-    function submitForm() {        console.log($scope.loginForm);
+    loginCtrl.submitForm = submitForm;
+    function submitForm() {
         loginCtrl.isSubmitted = true;
         if ($scope.loginForm.$valid){
             $http.get(`http://localhost:3000/users?email=${loginCtrl.loginForm.email}`).then(loginSuccess,);
@@ -46,7 +46,6 @@ function loginController($scope, $http, $location) {
     }
 
     function loginSuccess(response) {
-
         if (response.data.length === 0){
             loginCtrl.loginError = 'Такого пользователя не существует';
             setTimeout(function () {loginCtrl.loginError = ''}, 600);
@@ -57,49 +56,36 @@ function loginController($scope, $http, $location) {
             }
             else if(response.data[0].password !== loginCtrl.loginForm.password){
                 loginCtrl.loginError = 'Пароль не верный!';
-                setTimeout(function () {loginCtrl.loginError = ''}, 800);
+                setTimeout(function () {loginCtrl.loginError = ''}, 600);
                 return
             }
         }
         if(response.data.length > 0 && loginCtrl.passwordCheck){
-            $http.post('http://localhost:3000/activeUser', loginCtrl.loginForm);
+            $http.post('http://localhost:3000/activeUser', response.data[0]);
             $location.url('/account');
         }
     }
 }
 
 
-    function registerController($scope, $location, $http) {
-        var regCtrl = this;
-        regCtrl.hidePass = true;
-        regCtrl.isSubmitted = false;
-        regCtrl.submitForm = submitForm;
-        regCtrl.errorText = '';
-        regCtrl.regForm = {
-            email:'',
-            password:'',
-            name:'',
-            agree:false
+function registerController($scope, $location, $http) {
+    var regCtrl = this;
+
+    regCtrl.hidePass = true;
+    regCtrl.isSubmitted = false;
+    regCtrl.submitForm = submitForm;
+    regCtrl.regForm = {
+        email:'',
+        password:'',
+        name:'',
+        agree:false
     };
 
     function submitForm () {
         regCtrl.isSubmitted = true;
-
         if($scope.regForm.$valid){
             delete regCtrl.regForm.agree;
-            $http.get(`http://localhost:3000/users?email=${regCtrl.regForm.email}`).then(regCheck);
-        }
-    }
-
-    function regCheck(response) {
-        if(response.data.length > 0){
-            regCtrl.errorText = 'Пользователь с таким Email существует';
-            setTimeout(function () {
-                regCtrl.errorText = '';
-            },800);
-        }
-        else{
-            $http.post('http://localhost:3000/users',regCtrl.regForm).then(regSuccess);
+            $http.post('http://localhost:3000/users', regCtrl.regForm).then(regSuccess);
         }
     }
 

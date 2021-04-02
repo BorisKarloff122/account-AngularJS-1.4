@@ -1,0 +1,20 @@
+<div class="paginatorContainer">
+    <div class="totalBlock" ng-if="vm.perPage">
+        <div class="total">Всего: {{vm.limit}}</div>
+        <div class="from">{{vm.beginFrom}} - {{vm.endTo}}</div>
+    </div>
+    <div class="perPageBlock">
+        <md-select ng-model="vm.perPage" ng-change="vm.changeOnPageValue()">
+            <md-option ng-repeat="option in vm.onPage" ng-value="{{option}}">{{option}}</md-option>
+        </md-select>
+    </div>
+    <div class="buttons_container">
+        <button class="pagButton borderButtons toStart" ng-disabled="vm.limitToBegin" ng-click = 'vm.toStart()'><span class="material-icons">first_page</span></button>
+        <div class="pagButtons">
+            <button class="pagButton prev" ng-disabled="vm.limitToBegin"><span ng-click = "vm.paginate('prev')" class="material-icons">navigate_before</span></button>
+            <button class="pagButton next" ng-disabled="vm.limitToEnd"><span ng-click = "vm.paginate('next')" class="material-icons">navigate_next</span></button>
+        </div>
+        <button class="pagButton borderButtons toEnd" ng-disabled="vm.limitToEnd" ng-click = 'vm.toEnd()'><span class="material-icons">last_page</span></button>
+    </div>
+
+</div>

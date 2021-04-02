@@ -1,0 +1,19 @@
+<div class="modal-content" ng-controller="createCategoryController as vm">
+    <div class="header">Добавить категорию</div>
+    <div class="content">
+        <form name="vm.form">
+            <md-input-container>
+                <label>Название</label>
+                <input type="text" placeholder="Название" ng-model = "vm.form.name">
+            </md-input-container>
+            <md-input-container>
+                <label>Лимит</label>
+                <input type="number" placeholder="Лимит" ng-model = "vm.form.capacity">
+            </md-input-container>
+            <div class="action_container">
+                <md-button class="md-raised" ng-click="vm.submitForm()">Создать категорию</md-button>
+                <md-button class="md-raised blue" ng-click="vm.closeModal()">Закрыть</md-button>
+            </div>
+        </form>
+    </div>
+</div>

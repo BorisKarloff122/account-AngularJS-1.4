@@ -1,5 +1,8 @@
 var app = angular.module('appModule',[
     'auth',
+    'graph',
+    'modals',
+    'tableModule',
     'account',
     'ngRoute',
     'ngMessages',
@@ -11,7 +14,7 @@ angular.module('appModule').config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
             .when('/', {redirectTo:'/login'})
-            .when('/account', {template:'<account-list></account-list>',})
+            .when('/account', {template:'<account-page></account-page>',})
             .otherwise('/404', {template: '<not-found></not-found>'});
 }]);
 

@@ -1,0 +1,21 @@
+<div class="tableContainer">
+    <div class="table_row table_header_row" ng-if="vm.headers" >
+        <div class="table_header table_cell" ng-repeat="header in vm.headers">{{header}}</div>
+    </div>
+    <div class="tableRow" ng-repeat="entry in vm.source" ng-init = 'rowIndex = $index'>
+        <div class="table_cell" ng-class="cell{{prop}}"  ng-repeat="prop in vm.props">
+            <span ng-if="prop !== 'action'">
+                {{prop === 'index'? vm.setIndex(rowIndex + 1) :
+                  prop === 'date' ?  (entry[prop] | date :'dd.mm.yyyy') : entry[prop]}}
+            </span>
+            <md-button ng-if="prop === 'action'"  class="md-raised" ng-click = 'vm.actionCall(entry[prop].data)'>{{entry[prop].buttonText}}</md-button></div>
+    </div>
+</div>
+<paginator ng-if="vm.pagination"
+           limit = 'vm.limit'
+           per-page="vm.perPage"
+           border-buttons="true"
+           paginator-action="vm.pagAction"
+           on-page="vm.onPage"
+></paginator>
+
