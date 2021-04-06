@@ -1,0 +1,23 @@
+<div class="modal-content" ng-controller="userSettingsController as vm">
+    <div class="header">Редактировать пользователя</div>
+    <div class="contentBlock">
+            <form name="vm.userSettingsForm">
+                <md-input-container>
+                    <label>Имя</label>
+                    <input type="text" placeholder="Имя" ng-value="vm.userSettingsForm.name"  ng-model="vm.userSettingsForm.name">
+                </md-input-container>
+                <md-input-container>
+                    <label>Пароль</label>
+                    <input type="text" placeholder="Пароль" ng-value="vm.userSettingsForm.password" ng-model="vm.userSettingsForm.password">
+                </md-input-container>
+                <md-input-container>
+                    <label>Email</label>
+                    <input type="text" placeholder="Email" ng-value="vm.userSettingsForm.email" ng-model="vm.userSettingsForm.email">
+                </md-input-container>
+            </form>
+            <div class="actions">
+                <md-button ng-click = 'vm.submittForm()' class="blue md-raised">Сохранить</md-button>
+                <md-button ng-click = 'vm.closeModal()' class="md-raised">Закрыть</md-button>
+            </div>
+    </div>
+</div>

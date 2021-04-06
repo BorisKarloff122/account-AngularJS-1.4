@@ -59,13 +59,59 @@ modal.controller('createEventController', function($scope, $http) {
                 self.closeModal();
             });
         }
-
     }
 
 
     function closeModal() {
         $scope.$emit('closeModal', true) ;
     }
+});
+
+modal.controller('userSettingsController', function ($scope, $http) {
+   var self = this;
+   self.closeModal = closeModal;
+   self.submittForm = submittForm;
+   self.userSettingsForm = {
+        name: '',
+        password: '',
+        email: '',
+        id: 0
+   };
+   self.isSubmitted = false;
+
+   function init(){
+       $http.get('http://localhost:3000/activeUser').then(function (response) {
+           self.userSettingsForm = {
+               name: response.data[0].name,
+               password: response.data[0].password,
+               email: response.data[0].email,
+               id: response.data[0].id
+           }
+       });
+   }
+
+
+   function submittForm(){
+
+            var sendForm = {
+                name: self.userSettingsForm.name,
+                password: self.userSettingsForm.password,
+                email: self.userSettingsForm.email
+            };
+
+            $http.patch('http://localhost:3000/activeUser/' + self.userSettingsForm.id, self.userSettingsForm).then(function () {
+                $http.patch('http://localhost:3000/users/' + self.userSettingsForm.id, self.userSettingsForm).then(function () {
+                    self.closeModal();
+                });
+            });
+        }
+
+
+   function closeModal() {
+      $scope.$emit('closeModal', true) ;
+   }
+
+   init();
 });
 
 modal.controller('createCategoryController', function ($scope, $http) {

@@ -54,7 +54,6 @@ function accountController($http, $scope, $compile) {
    });
 
    $scope.$on('modalOpen', function (event, data) {
-       // not my proudest moment
         var newElement = $compile( "<modal-container " + "info-data = "+ JSON.stringify(data.dataInfo) + " modal-template =" + data.modalType + " is-opened = " + data.isOpened + "></modal-container>" )( $scope );
         angular.element(document.querySelector('.content')).append(newElement);
    });
@@ -295,6 +294,7 @@ account.controller('drawerController', function ($scope, $location, $http) {
     self.drawerActive = drawerActive;
     self.openMenu = openMenu;
     self.logOut = logOut;
+    self.openSettings = openSettings;
 
     function drawerActive() {
         if(self.isDrawed){
@@ -305,6 +305,10 @@ account.controller('drawerController', function ($scope, $location, $http) {
             self.isDrawed = true;
             $scope.$emit('drawerOpen', self.isDrawed);
         }
+    }
+
+    function openSettings() {
+        $scope.$emit('modalOpen', {modalType:'userSettings', isOpened: true});
     }
 
     function openMenu($mdMenu, ev) {
