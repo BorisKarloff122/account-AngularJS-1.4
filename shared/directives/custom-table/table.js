@@ -1,4 +1,4 @@
-var table = angular.module('tableModule',[]);
+var table = angular.module('tableModule',['ngSanitize']);
 
 table.directive('customTable', function () {
     return{
@@ -14,7 +14,6 @@ table.directive('customTable', function () {
             props: '=',
             type:'@',
             activator:'@',
-            // paginator values - transfer them to paginator component
             limit:'=',
             perPage:'=',
             borderButtons:'=',
@@ -115,12 +114,26 @@ function paginatorController($scope, $timeout) {
     $timeout(function () {init();},100);
 }
 
-function customTableController($scope) {
+function customTableController($scope, $timeout) {
     var self = this;
     self.pagAction = self.paginatorAction;
     self.actionCall = actionCall;
     self.setIndex = setIndex;
     self.indexAccum = 1;
+    self.sourceReady = false;
+
+    function init() {
+        self.source.forEach(function (item, index) {
+            self.props.forEach(function (innerItem, innerIndex) {
+                if (typeof self.source[index][innerItem] === "object" && item !== null){
+                    if(self.source[index][innerItem].type === 'image'){
+                        self.source[index][innerItem] = '<span class="material-icons">' + self.source[index][innerItem].value + '</span>';
+                    }
+                }
+            });
+        });
+        self.sourceReady = true;
+    }
 
     function setIndex(index) {
         if(!self.pagination){return index;}
@@ -131,4 +144,8 @@ function customTableController($scope) {
         var activatorLine = self.activator;
         $scope.$emit(activatorLine, data);
     }
+
+    $timeout(function (){init()}, 550);
 }
+
+

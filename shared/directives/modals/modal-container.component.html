@@ -1,7 +1,6 @@
 <div class="modal" ng-class="vm.isOpened ? 'modal-opened' : ''">
     <div class="backdrop close_modal" ng-click="vm.closeModal()"></div>
     <div class="modal_container">
-
         <div class="close_modal cross" ng-click="vm.closeModal()"></div>
         <div ng-if="vm.modalTemplate" ng-include="'shared/directives/modals/' + vm.modalTemplate + '.component.html'"></div>
     </div>

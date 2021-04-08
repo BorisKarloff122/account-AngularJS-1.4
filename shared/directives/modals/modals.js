@@ -92,7 +92,6 @@ modal.controller('userSettingsController', function ($scope, $http) {
 
 
    function submittForm(){
-
             var sendForm = {
                 name: self.userSettingsForm.name,
                 password: self.userSettingsForm.password,

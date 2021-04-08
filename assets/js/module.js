@@ -7,7 +7,8 @@ var app = angular.module('appModule',[
     'ngRoute',
     'ngMessages',
     'ngMaterial',
-    'ngAnimate'
+    'ngAnimate',
+
 ]);
 
 angular.module('appModule').config(['$routeProvider',
