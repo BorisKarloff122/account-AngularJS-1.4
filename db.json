@@ -182,6 +182,14 @@
       "description": "141414",
       "date": "2021-02-11T13:45:02.949Z",
       "id": 13
+    },
+    {
+      "category": 5,
+      "date": "2021-04-12T11:00:30.362Z",
+      "amount": 123,
+      "description": "toasty",
+      "type": "income",
+      "id": 14
     }
   ]
 }

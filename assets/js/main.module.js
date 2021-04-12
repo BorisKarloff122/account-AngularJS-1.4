@@ -120,13 +120,12 @@ account.controller('detailsController', function ($scope, $http, details) {
 account.controller('billController', function billController($http) {
     var self = this;
     self.valutes = ['EUR', 'USD', 'UAH'];
-    self.images = ['euro_sign','paid','filter_tilt_shift']
-    self.billEditSource = [{name:'Tony', prof:'Billionaire'}, {name:'Steve',prof:'Soldier'}];
+    self.images = ['assets/img/euro.svg','assets/img/usd.svg','assets/img/uah.svg'];
 
     $http.get('http://data.fixer.io/api/latest?access_key=156f43c852d2eb2cdca7a4ba965e720a').then(function (responseMain) {
         self.currencyRateUSD = responseMain.data['USD'];
         self.currencyRateUAH = responseMain.data['UAH'];
-        $http.get('http://localhost:3000/bill').then(function (response) {
+        $http.get('http://localhost:3000/bill').then(function (response){
             setDataSource(responseMain, response);
         });
     });
@@ -143,7 +142,7 @@ account.controller('billController', function billController($http) {
         self.recordedProps = ['name','value'];
         self.recordedSource = Array(3).fill(0).map(function (x, y) {
             return{
-                name: {type: 'image', value: self.images[y]},
+                name: {type: 'image_unknown', value: { source: self.images[y], name: self.valutes[y]}},
                 value: bill.data.value * response.data.rates[self.valutes[y]]
             }
         })

@@ -308,7 +308,7 @@ custom-table{
 
 .bill_container{
     display:Flex;
-    align-items: center;
+    align-items: flex-start;
     width:100%;
     max-width:100%;
     justify-content: space-between;
@@ -447,6 +447,11 @@ paginator .buttons_container{
     display:flex;
     align-items: center;
     justify-content: space-between;
+}
+
+
+.small_img{
+    max-width:35px;
 }
 
 .modal{

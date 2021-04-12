@@ -126,14 +126,20 @@ function customTableController($scope, $timeout) {
         self.source.forEach(function (item, index) {
             self.props.forEach(function (innerItem, innerIndex) {
                 if (typeof self.source[index][innerItem] === "object" && item !== null){
-                    if(self.source[index][innerItem].type === 'image'){
-                        self.source[index][innerItem] = '<span class="material-icons">' + self.source[index][innerItem].value + '</span>';
+                    var itemValue = self.source[index][innerItem];
+                    if(itemValue.type === 'image'){
+                        self.source[index][innerItem] = '<span class="material-icons">' + itemValue.value + '</span>';
+                    }
+                    else if(itemValue.type === 'image_unknown'){
+                        self.source[index][innerItem] = "<img class = 'small_img' src=" + itemValue.value.source + "/>";
                     }
                 }
             });
         });
         self.sourceReady = true;
     }
+
+
 
     function setIndex(index) {
         if(!self.pagination){return index;}
