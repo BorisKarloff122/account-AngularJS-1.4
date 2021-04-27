@@ -6,37 +6,46 @@ var account = angular.module('account',[
 
 account.directive('accountPage', function () {
    return {
-        templateUrl:'pages/main/account-page/account-page.component.html',
-        controller:accountController,
+        templateUrl: 'pages/main/account-page/account-page.component.html',
+        controller: accountController,
         controllerAs: 'vm',
-        bindToController:true
+        bindToController: true
    }
+});
+
+account.directive('helperPage', function(){
+    return {
+        templateUrl: 'pages/main/account-page/helper.component.html',
+        controller: accountController,
+        controllerAs: 'vm',
+        bindToController: true
+    }
 });
 
 account.directive('billPage', function () {
     return {
-        templateUrl:'pages/main/bill/bill-page.component.html',
-        controller:billController,
+        templateUrl: 'pages/main/bill/bill-page.component.html',
+        controller: billController,
         controllerAs: 'vm',
-        bindToController:true
+        bindToController: true
     }
 });
 
 account.directive('historyPage', function () {
     return {
-        templateUrl:'pages/main/history/history-page.component.html',
-        controller:historyController,
+        templateUrl: 'pages/main/history/history-page.component.html',
+        controller: historyController,
         controllerAs: 'vm',
-        bindToController:true
+        bindToController: true
     }
 });
 
 account.directive('detailsPage', function () {
     return{
-        templateUrl:'pages/main/history/details.component.html',
-        controller:detailsController,
-        controllerAs:'vm',
-        bindToController:true
+        templateUrl: 'pages/main/history/details.component.html',
+        controller: detailsController,
+        controllerAs: 'vm',
+        bindToController: true
     }
 });
 
@@ -46,6 +55,7 @@ function accountController($http, $scope, $compile) {
    self.drawer = true;
    self.menuState = 'bill';
    self.setState = setState;
+   self.title = 'Cтраница счета';
    self.modalType = '';
    self.isOpened = false;
 
@@ -54,36 +64,44 @@ function accountController($http, $scope, $compile) {
    });
 
    $scope.$on('modalOpen', function (event, data) {
-        var newElement = $compile( "<modal-container " + "info-data = "+ JSON.stringify(data.dataInfo) + " modal-template =" + data.modalType + " is-opened = " + data.isOpened + "></modal-container>" )( $scope );
+        var newElement = $compile( "<modal-container " + "info-data = " + JSON.stringify(data.dataInfo) + " modal-template =" + data.modalType + " is-opened = " + data.isOpened + "></modal-container>" )( $scope );
         angular.element(document.querySelector('.content')).append(newElement);
    });
 
    function init(){
+        setState();
         $http.get('http://localhost:3000/activeUser').then(function (response) {
             self.user = response.data[0];
         });
-       setState();
+     
    }
-
-
 
    function setState(state) {
        if(state === 'bill') {
-            self.tempState = 'pages/main/bill/bill-page.component.html';
-            self.menuState = 'bill';
+           self.title = 'Cтраница счета';   
+           self.tempState = 'pages/main/bill/bill-page.component.html';
+           self.menuState = 'bill';
        }
        else if(state === 'history'){
+           self.title = 'Страница истории';
            self.tempState = 'pages/main/history/history-page.component.html';
            self.menuState = 'history';
        }
        else if(state === 'records'){
+           self.title = 'Страница записей';
            self.tempState = 'pages/main/records/records-page.component.html';
            self.menuState = 'records';
        }
        else if(state === 'details'){
+           self.title = 'Страница записи ';
            self.tempState = 'pages/main/history/details.component.html';
            self.menuState = 'history';
        }
+       else if(state === 'helper'){
+           self.title = 'Страница справки';
+           self.tempState = 'pages/main/helper/helper.component.html';
+           self.menuState = 'helper';
+    }
    }
 
    $scope.$on('backToHistory', function () {
@@ -120,7 +138,11 @@ account.controller('detailsController', function ($scope, $http, details) {
 account.controller('billController', function billController($http) {
     var self = this;
     self.valutes = ['EUR', 'USD', 'UAH'];
-    self.images = ['assets/img/euro.svg','assets/img/usd.svg','assets/img/uah.svg'];
+    self.images = [
+        '../../../../assets/img/euro.svg', 
+        './assets/img/usd.svg', 
+        '../../../assets/img/uah.svg'
+    ];
 
     $http.get('http://data.fixer.io/api/latest?access_key=156f43c852d2eb2cdca7a4ba965e720a').then(function (responseMain) {
         self.currencyRateUSD = responseMain.data['USD'];
@@ -134,7 +156,7 @@ account.controller('billController', function billController($http) {
         self.billDataSource = Array(3).fill(0).map(function (x, index) {
          return  {
                 name: self.valutes[index],
-                value:response.data.rates[self.valutes[index]],
+                value: response.data.rates[self.valutes[index]],
                 date: response.data['date']
             }
         });
@@ -288,6 +310,11 @@ account.controller('recordsController', function ($scope, $http) {
     }
 
     init();
+});
+
+account.controller('helperController', function(){
+    var self = this;
+
 });
 
 account.controller('drawerController', function ($scope, $location, $http) {

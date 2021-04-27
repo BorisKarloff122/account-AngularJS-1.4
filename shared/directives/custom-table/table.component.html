@@ -5,7 +5,7 @@
     <div class="tableRow" ng-repeat="entry in vm.source" ng-init = 'rowIndex = $index'>
         <div class="table_cell" ng-class="cell{{prop}}"  ng-repeat="prop in vm.props">
             <span ng-if="prop !== 'action'" ng-bind-html="
-                  prop === 'index'? vm.setIndex(rowIndex + 1) :
+                  prop === 'index' ? vm.setIndex(rowIndex + 1) :
                   prop === 'date' ?  (entry[prop] | date :'dd.mm.yyyy') :
                   entry[prop]">
             </span>
