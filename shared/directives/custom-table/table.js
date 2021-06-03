@@ -75,8 +75,7 @@ function paginatorController($scope, $timeout) {
             self.beginFrom = self.beginFrom + self.perPage;
             if(self.beginFrom + self.perPage < self.limit){
                 self.endTo = self.beginFrom + self.perPage - 1;
-            }
-            else{
+            } else {
                 self.endTo = self.limit;
             }
         }
@@ -114,11 +113,12 @@ function paginatorController($scope, $timeout) {
     $timeout(function () {init();},100);
 }
 
-function customTableController($scope, $timeout) {
+function customTableController($scope, $timeout, $filter) {
     var self = this;
     self.pagAction = self.paginatorAction;
     self.actionCall = actionCall;
     self.setIndex = setIndex;
+    self.sortCols = sortCols;
     self.indexAccum = 1;
     self.sourceReady = false;
 
@@ -127,9 +127,11 @@ function customTableController($scope, $timeout) {
             self.props.forEach(function (innerItem, innerIndex) {
                 if (typeof self.source[index][innerItem] === "object" && item !== null){
                     var itemValue = self.source[index][innerItem];
+
                     if(itemValue.type === 'image'){
-                        self.source[index][innerItem] = '<span class="material-icons">' + itemValue.value + '</span>';
+                        self.source[index][innerItem] = '<span class = "material-icons">' + itemValue.value + '</span>';
                     }
+
                     else if(itemValue.type === 'image_unknown'){
                         self.source[index][innerItem] = "<img class = 'small_img' src=" + itemValue.value.source + "/>";
                     }
@@ -139,11 +141,15 @@ function customTableController($scope, $timeout) {
         self.sourceReady = true;
     }
 
-
-
     function setIndex(index) {
         if(!self.pagination){return index;}
         else{return index;}
+    }
+    
+    function sortCols (colName) {
+        let colIndex = self.headers.indexOf(colName);
+        self.source.sort((a, b) =>
+            a.Object.keys(self.source)[colIndex] > b.Object.keys(self.source)[colIndex] ? 1 : -1);
     }
 
     function actionCall(data){

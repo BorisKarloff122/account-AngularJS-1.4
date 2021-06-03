@@ -1,6 +1,6 @@
 <div class="tableContainer" ng-hide="!vm.sourceReady">
-    <div class="table_row table_header_row" ng-if="vm.headers" >
-        <div class="table_header table_cell" ng-repeat="header in vm.headers">{{header}}</div>
+    <div  class="table_row table_header_row" ng-if="vm.headers" >
+        <div ng-click="vm.sortCols(header)" class="table_header table_cell" ng-repeat="header in vm.headers">{{header}}</div>
     </div>
     <div class="tableRow" ng-repeat="entry in vm.source" ng-init = 'rowIndex = $index'>
         <div class="table_cell" ng-class="cell{{prop}}"  ng-repeat="prop in vm.props">

@@ -1,35 +1,15 @@
 {
-  "_from": "angular-material@^1.2.2",
-  "_id": "angular-material@1.2.2",
-  "_inBundle": false,
-  "_integrity": "sha512-GtrBzYDg5zHYX/OUqxo72zb9bsY0RDuIA+4ZsZjuv1r+L4q9UAtkeIZzMXVGua6CCNgfB58cKep3TmxtAZhNwg==",
-  "_location": "/angular-material",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "angular-material@^1.2.2",
-    "name": "angular-material",
-    "escapedName": "angular-material",
-    "rawSpec": "^1.2.2",
-    "saveSpec": null,
-    "fetchSpec": "^1.2.2"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/angular-material/-/angular-material-1.2.2.tgz",
-  "_shasum": "42a0e1ab196980476f08c20efcbd4541678e2600",
-  "_spec": "angular-material@^1.2.2",
-  "_where": "C:\\Projects\\account-angularJS",
-  "bugs": {
-    "url": "https://github.com/angular/material/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "This repository publishes the AngularJS Material v1.x library and localized installs using `npm`. You can find the component source-code for this library in the [AngularJS Material repository](https://github.com/angular/material).",
+  "name": "angular-material",
+  "version": "1.2.2",
+  "main": "index",
   "format": "cjs",
-  "homepage": "https://material.angularjs.org",
+  "registry": "github",
+  "peerDependencies": {
+    "angular": "^1.7.2",
+    "angular-animate": "^1.7.2",
+    "angular-aria": "^1.7.2",
+    "angular-messages": "^1.7.2"
+  },
   "jspm": {
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.7.2",
@@ -45,6 +25,18 @@
     },
     "peerDependencies": {}
   },
+  "homepage": "https://material.angularjs.org",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular/material.git"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/angular/material/blob/master/LICENSE"
+    }
+  ],
   "keywords": [
     "angularjs",
     "material",
@@ -54,25 +46,7 @@
     "component library",
     "components"
   ],
-  "license": "MIT",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/angular/material/blob/master/LICENSE"
-    }
-  ],
-  "main": "index",
-  "name": "angular-material",
-  "peerDependencies": {
-    "angular": "^1.7.2",
-    "angular-animate": "^1.7.2",
-    "angular-aria": "^1.7.2",
-    "angular-messages": "^1.7.2"
-  },
-  "registry": "github",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/angular/material.git"
-  },
-  "version": "1.2.2"
+  "bugs": {
+    "url": "https://github.com/angular/material/issues"
+  }
 }
