@@ -148,8 +148,7 @@ function customTableController($scope, $timeout, $filter) {
     
     function sortCols (colName) {
         let colIndex = self.headers.indexOf(colName);
-        self.source.sort((a, b) =>
-            a.Object.keys(self.source)[colIndex] > b.Object.keys(self.source)[colIndex] ? 1 : -1);
+        self.source.sort((a, b) => a.Object.keys(self.source)[colIndex] > b.Object.keys(self.source)[colIndex] ? 1 : -1);
     }
 
     function actionCall(data){

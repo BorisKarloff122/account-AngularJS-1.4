@@ -49,14 +49,8 @@ angular.module('appModule').directive('notFound', function () {
 
 
 
-function footerController() {
-    
-}
+function footerController() {}
 
-function headerController() {
-    
-}
+function headerController() {}
 
-function notController() {
-    
-}
+function notController() {}
